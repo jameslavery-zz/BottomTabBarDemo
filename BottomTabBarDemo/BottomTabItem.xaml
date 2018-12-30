@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns     ="http://xamarin.com/schemas/2014/forms"
+    xmlns:x    ="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:BottomTabBarDemo;assembly=BottomTabBarDemo"
+    x:Class    ="BottomTabBarDemo.BottomTabItem">
+    <ContentView.Content>
+        <StackLayout
+            x:Name     ="Home"
+            Orientation="Vertical"
+            Margin     ="5,5,5,0">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped              ="Handle_Tapped"
+                    NumberOfTapsRequired="1" />
+            </StackLayout.GestureRecognizers>
+            <StackLayout
+                Orientation      ="Horizontal"
+                HorizontalOptions="Center">
+                <Image
+                    x:Name       ="IconImage"
+                    HeightRequest="15"
+                    Source       ="iconvehicles" />
+            </StackLayout>
+            <Label
+                x:Name                 ="CaptionLabel"
+                Text                   ="Home"
+                HorizontalTextAlignment="Center"
+                LineBreakMode          ="TailTruncation"
+                FontSize               ="Micro"
+                TextColor              ="Black"
+                VerticalOptions        ="End" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns     ="http://xamarin.com/schemas/2014/forms"
+    xmlns:x    ="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:BottomTabBarDemo;assembly=BottomTabBarDemo"
+    xmlns:local="clr-namespace:BottomTabBarDemo"
+    x:Class    ="BottomTabBarDemo.MainPage">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="*" />
+                <ColumnDefinition
+                    Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row         ="0"
+                Grid.Column      ="0"
+                Grid.ColumnSpan  ="2"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions  ="Center"
+                Text             ="{Binding Title}" />
+            <Image
+                Grid.Row     ="0"
+                Grid.Column  ="1"
+                HeightRequest="30"
+                Source       ="menu.png">
+               <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped              ="MenuTapped"
+                        NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="Auto" />
+            </Grid.RowDefinitions>
+            <ScrollView
+                Grid.Row   ="0"
+                Grid.Column="0"
+                Padding    ="0"
+                x:Name     ="scrollMain">
+                <StackLayout>
+                    <StackLayout
+                        IsVisible="{Binding LeadsSelected}">
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            Text             ="Leads" />
+                    </StackLayout>
+                    <StackLayout
+                        IsVisible="{Binding ContactsSelected}">
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            Text             ="Contacts" />
+                    </StackLayout>
+                    <StackLayout
+                        IsVisible="{Binding AccountsSelected}">
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            Text             ="Accounts" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <views:BottomTabControl
+                BackgroundColor="{StaticResource ToolbarItemUnselectedBackground}"
+                Grid.Row       ="1"
+                Grid.Column    ="0" />
+        </Grid>
+    </ContentView>
+</ContentPage>

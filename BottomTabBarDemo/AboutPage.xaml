@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns ="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title  ="About"
+    x:Class="BottomTabBarDemo.AboutPage">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical">
+            <Label
+                FontAttributes   ="Bold"
+                Text             ="Bottom Tab Bar Demo Project"
+                HorizontalOptions="Center" />
+            <Label
+                FontAttributes         ="Bold"
+                HorizontalTextAlignment="Center"
+                Text                   ="By James Lavery (james@jackstay.co.uk)"
+                HorizontalOptions      ="Center" />
+            <Label FontAttributes="Italic"
+                VerticalOptions="End"
+                Text="Note that this page does not have a menu. We need to be careful we don't create a navigation mess by having menus on all pages!" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

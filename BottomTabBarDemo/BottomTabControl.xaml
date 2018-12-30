@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns        ="http://xamarin.com/schemas/2014/forms"
+    xmlns:x       ="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:BottomTabBarDemo;assembly=BottomTabBarDemo"
+    x:Class       ="BottomTabBarDemo.BottomTabControl">
+    <ContentView.Content>
+        <ScrollView
+            Orientation="Horizontal"
+            x:Name     ="ContainingScroll">
+            <StackLayout
+                Orientation="Vertical"
+                Padding    ="0,0,0,0">
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Grid
+                        HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout
+                            HorizontalOptions="Fill"
+                            Grid.Row         ="0"
+                            Grid.Column      ="0">
+                            <controls:BottomTabItem
+                                x:Name           ="leads"
+                                Caption          ="Leads"
+                                HorizontalOptions="Fill"
+                                VerticalOptions  ="Center"
+                                IconSource       ="leads"
+                                Selected         ="{Binding LeadsSelected}"
+                                TapCommand       ="{Binding LeadsCommand}" />
+                        </StackLayout>
+                        <StackLayout
+                            HorizontalOptions="Fill"
+                            Grid.Row         ="0"
+                            Grid.Column      ="1">
+                            <controls:BottomTabItem
+                                x:Name           ="contacts"
+                                Caption          ="Contacts"
+                                HorizontalOptions="Fill"
+                                VerticalOptions  ="Center"
+                                IconSource       ="contacts"
+                                TapCommand       ="{Binding ContactsCommand}"
+                                Selected         ="{Binding ContactsSelected}" />
+                        </StackLayout>
+                        <StackLayout
+                            HorizontalOptions="Fill"
+                            Grid.Row         ="0"
+                            Grid.Column      ="2">
+                            <controls:BottomTabItem
+                                x:Name           ="accounts"
+                                Caption          ="Accounts"
+                                HorizontalOptions="Fill"
+                                VerticalOptions  ="Center"
+                                IconSource       ="accounts"
+                                TapCommand       ="{Binding AccountsCommand}"
+                                Selected         ="{Binding AccountsSelected}" />
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>
