@@ -27,7 +27,7 @@
                 Source       ="menu.png">
                <Image.GestureRecognizers>
                     <TapGestureRecognizer
-                        Tapped              ="MenuTapped"
+                        Command              ="{Binding MenuCommand}"
                         NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>

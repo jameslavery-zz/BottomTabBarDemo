@@ -11,11 +11,5 @@ namespace BottomTabBarDemo
         {
             InitializeComponent();
         }
-
-        async void MenuTapped(object sender, EventArgs e)
-        {
-            await Navigation.PushPopupAsync(new MenuPage());
-        }
-
     }
 }

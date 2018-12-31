@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Rg.Plugins.Popup.Extensions;
 using FreshMvvm;
 using Xamarin.Forms;
 
@@ -67,13 +68,30 @@ namespace BottomTabBarDemo
             }
         }
 
+
+        private ICommand _MenuCommand;
+        public ICommand MenuCommand
+        {
+            get
+            {
+                if (_MenuCommand == null)
+                {
+                    _MenuCommand = new Command(async () => await this.ShowMenu());
+                }
+                return _MenuCommand;
+            }
+        }
+
         #endregion Commands
 
         #region Private Methods
 
+        private async Task ShowMenu()
+        {
+            await Application.Current.MainPage.Navigation.PushPopupAsync(new MenuPage());
+        }
 
-
-        protected void SelectTab(string tabName)
+        private void SelectTab(string tabName)
         {
             string lowercaseName = tabName.ToLower();
 
